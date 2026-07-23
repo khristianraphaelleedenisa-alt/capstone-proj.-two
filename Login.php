@@ -5,7 +5,7 @@ require "database.php";
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = trim($_POST["email address"]);
+    $email = trim($_POST["email"]);
     $password = $_POST["password"];
 
     $findUser = $pdo->prepare(
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["account_type"] = $user["account_type"];
 
         if ($user["account_type"] === "jobseeker") {
-            header("Location: jobseeker-dashboard.html");
+            header("Location: jobseeker_dashboard.php");
         } else {
             header("Location: employer-dashboard.html");
         }
@@ -207,12 +207,12 @@ body{
 
         <div class="input-group">
             <label>Email Address</label>
-            <input type="email" placeholder="Enter your email">
+            <input type="email" name="email" placeholder="Enter your email">
         </div>
 
         <div class="input-group">
             <label>Password</label>
-            <input type="password" id="password" placeholder="Enter your password">
+            <input type="password" name="password" id="password" placeholder="Enter your password">
         </div>
 
         <div class="show-password">
