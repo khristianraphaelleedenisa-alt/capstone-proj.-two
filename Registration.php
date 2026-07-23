@@ -52,9 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             header("Location: login.php?registered=1");
             exit;
-        }
-    }
-}
+            }           
+       }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -237,21 +237,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h1>Create Your Account</h1>
     <p class="subtitle">Join PESO Connect and find opportunities in Mandaluyong.</p>
 
-    <form id="registerForm" method="POST" action="register.php">
+    <form method="POST" action="Registration.php">
       <div class="fields">
         <div>
           <label for="firstName">First Name <span class="required">*</span></label>
-          <input type="text" id="firstName" required placeholder="Enter first name">
+          <input type="text" id="firstName" name="first_name" required placeholder="Enter first name">
         </div>
 
         <div>
           <label for="lastName">Last Name <span class="required">*</span></label>
-          <input type="text" id="lastName" required placeholder="Enter last name">
+          <input type="text" id="last_Name" name="last_name" required placeholder="Enter last name">
         </div>
 
         <div class="full">
           <label for="email">Email Address <span class="required">*</span></label>
-          <input type="email" id="email" required placeholder="Enter email address">
+          <input type="email" id="email" name="email" required placeholder="Enter email address">
         </div>
 
         <div>
@@ -259,6 +259,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <input
             type="text"
             id="mobile"
+            name="mobile"
             required
             inputmode="numeric"
             maxlength="12"
@@ -271,7 +272,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <div>
           <label for="accountType">Register As <span class="required">*</span></label>
-          <select id="accountType" required>
+          <select id="account_type" name="account_type" required>
             <option value="">Select account type</option>
             <option value="jobseeker">Job Seeker</option>
             <option value="employer">Employer / Company</option>
@@ -283,6 +284,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <input
             type="password"
             id="password"
+            name="password"
             required
             minlength="8"
             placeholder="Minimum 8 characters"
@@ -294,6 +296,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <input
             type="password"
             id="confirmPassword"
+            name="confirm_password"
             required
             placeholder="Enter password again"
           >
